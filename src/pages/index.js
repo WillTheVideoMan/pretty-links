@@ -38,8 +38,8 @@ const App = () => {
       style={{
         margin: "0",
         padding: "0",
-        width: window.innerWidth + "px",
-        height: window.innerHeight + "px",
+        width: "500px",
+        height: "500px",
       }}
       width="50px"
       height="50px"
