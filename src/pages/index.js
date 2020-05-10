@@ -32,6 +32,16 @@ const App = () => {
       <ColourfulCanvas
         width={dimensions[0]}
         height={dimensions[1]}
+        palette={[
+          [
+            [255, 0, 0],
+            [0, 255, 255],
+          ],
+          [
+            [255, 255, 0],
+            [0, 0, 255],
+          ],
+        ]}
         speed={2.5}
         scale={200}
         animate={animate}
