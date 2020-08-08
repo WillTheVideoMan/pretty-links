@@ -1,7 +1,7 @@
 /**
  * The base line height, units in em;
  */
-const baseLineHeight = 1.55
+const baseLineHeight = 1.7
 
 /**
  * The font scaling parameter. The size of each font is based from the root font size, multiplied by the scaling factor.
