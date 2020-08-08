@@ -1,52 +1,45 @@
-import React, { useState, useEffect } from "react"
-import ColourfulCanvas from "../components/ColourfulCanvas"
+import React from "react"
+import Links from "../components/Links"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
 
-const App = () => {
-  const [animate, setAnimate] = useState(true)
-  const [dimensions, setDimensions] = useState([0, 0])
-
-  useEffect(() => {
-    const handleResize = () =>
-      setDimensions([window.innerWidth, window.innerHeight])
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+const Index = ({ data }) => {
+  const links = data.allLinksJson
+    ? data.allLinksJson.edges.map(edge => edge.node)
+    : []
+  const palette = data.allPaletteJson.edges.map(edge => [
+    edge.node.from,
+    edge.node.to,
+  ])
 
   return (
-    <div>
-      <h1
-        style={{
-          zIndex: "99",
-          position: "absolute",
-          mixBlendMode: "difference",
-          color: "white",
-          fontFamily: "mono",
-          left: "24px",
-          cursor: "pointer",
-        }}
-        onClick={() => setAnimate(!animate)}
-      >
-        {animate ? "Pause" : "Play"}
-      </h1>
-      <ColourfulCanvas
-        width={dimensions[0]}
-        height={dimensions[1]}
-        palette={[
-          [
-            [255, 0, 0],
-            [0, 255, 255],
-          ],
-          [
-            [255, 255, 0],
-            [0, 0, 255],
-          ],
-        ]}
-        speed={2.5}
-        scale={200}
-        animate={animate}
-      />
-    </div>
+    <Layout palette={palette}>
+      <Links title="Link In Bio" links={links} />
+    </Layout>
   )
 }
-export default App
+
+export default Index
+
+export const indexQuery = graphql`
+  query {
+    allLinksJson {
+      edges {
+        node {
+          id
+          text
+          url
+        }
+      }
+    }
+    allPaletteJson {
+      edges {
+        node {
+          id
+          from
+          to
+        }
+      }
+    }
+  }
+`
