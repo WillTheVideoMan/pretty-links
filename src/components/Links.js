@@ -26,8 +26,7 @@ const Title = styled.div`
   font-size: ${TYPOGRAPHY.fontSize.heading.massive};
   line-height: ${TYPOGRAPHY.lineHeight.heading};
   text-align: center;
-  margin-bottom: ${SPACING.accent.minor};
-  margin-top: ${SPACING.accent.major};
+  margin: ${SPACING.accent.minor} 0;
 `
 
 const Links = ({ title, links }) => {
