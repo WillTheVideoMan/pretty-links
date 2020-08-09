@@ -14,7 +14,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout palette={palette}>
-      <Links title="Link In Bio" links={links} />
+      <Links title="@willthevideoman" links={links} />
     </Layout>
   )
 }
