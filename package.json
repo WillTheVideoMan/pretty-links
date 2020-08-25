@@ -6,10 +6,10 @@
   "author": "Will Hall",
   "dependencies": {
     "babel-plugin-styled-components": "1.11.1",
-    "gatsby": "2.24.47",
+    "gatsby": "2.24.49",
     "gatsby-plugin-react-helmet": "3.3.10",
     "gatsby-plugin-styled-components": "3.3.10",
-    "gatsby-source-filesystem": "2.3.24",
+    "gatsby-source-filesystem": "2.3.25",
     "gatsby-transformer-json": "2.4.11",
     "prop-types": "15.7.2",
     "react": "16.13.1",
